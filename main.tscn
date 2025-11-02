@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://c23o461yoeaps"]
+
+[ext_resource type="Script" uid="uid://bc4hm3b32ihic" path="res://scripts/base_panel.gd" id="1_0xm2m"]
+[ext_resource type="Theme" uid="uid://b2hlmcodi13kc" path="res://resources/ui/base_theme_override.tres" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://ymk41y30e66p" path="res://scenes/cozy_map.tscn" id="3_h2yge"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_0xm2m")
+
+[node name="BgPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ig7tw")
+
+[node name="Margins" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="FgPanel" type="Panel" parent="Margins"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 13.4
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Margins/FgPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Margins/FgPanel/SubViewportContainer"]
+size = Vector2i(1092, 588)
+size_2d_override_stretch = true
+
+[node name="CozyMap" parent="Margins/FgPanel/SubViewportContainer/SubViewport" instance=ExtResource("3_h2yge")]
+
+[node name="Label" type="Label" parent="Margins/FgPanel"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 208.0
+offset_right = 963.0
+offset_bottom = 388.0
+
+[node name="LineEdit" type="LineEdit" parent="Margins/FgPanel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 522.0
+offset_right = 1068.0
+offset_bottom = 570.0
+
+[node name="Button" type="Button" parent="Margins/FgPanel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 474.0
+offset_right = 490.0
+offset_bottom = 514.0
+text = "Talk to Sheeta"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Margins/FgPanel"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 1081.0
+offset_bottom = 470.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Margins/FgPanel/ScrollContainer"]
+layout_mode = 2
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="text_changed" from="Margins/FgPanel/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="Margins/FgPanel/Button" to="." method="_on_button_pressed"]
