@@ -1,8 +1,8 @@
 extends Control
 
 # @onready var label: Label = get_node("Margins/FgPanel/Label")
-@onready var line_edit: LineEdit = get_node("Margins/FgPanel/LineEdit")
-@onready var fg_panel: Panel = get_node("Margins/FgPanel")
+@onready var line_edit: LineEdit = get_node("Meditation/FgPanel/LineEdit")
+@onready var fg_panel: Panel = get_node("Meditation/FgPanel")
 @onready var http_request: HTTPRequest = get_node("HTTPRequest")
 
 # Updated to a working endpoint - replace with your actual API
@@ -134,6 +134,7 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 	# line_edit.call_deferred("grab_focus") # Return focus to the LineEdit after a frame
 
 func _on_button_pressed() -> void:
+	print("=== TALK TO SHEETA BUTTON PRESSED ===")
 	if is_requesting:
 		# label.text = "Request already in progress..."
 		return
