@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dmwmrnj7ynhgk"]
+
+[ext_resource type="FontFile" uid="uid://cr627iumg43s6" path="res://assets/ui/fonts/DepartureMonoNerdFont-Regular.otf" id="1_iglis"]
+
+[sub_resource type="FontVariation" id="FontVariation_7mycd"]
+base_font = ExtResource("1_iglis")
+
+[resource]
+default_font = SubResource("FontVariation_7mycd")
+default_font_size = 32
