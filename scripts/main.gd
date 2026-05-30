@@ -2,6 +2,10 @@ extends Control
 
 # @onready var label: Label = get_node("Margins/FgPanel/Label")
 @onready var line_edit: LineEdit = get_node("Meditation/FgPanel/LineEdit")
+# TOOL: make it so fg_panel can be easily hidden
+#  This is the starting point of the panel, and behaviors to it like
+#  hiding and being brought back.
+# Lables: code
 @onready var fg_panel: Panel = get_node("Meditation/FgPanel")
 @onready var http_request: HTTPRequest = get_node("HTTPRequest")
 @onready var resolution_ctl = %ResolutionCtl
@@ -20,16 +24,10 @@ func _ready() -> void:
 
 	# Center the camera on the marker
 	center_camera_on_marker()
-# func _connect_resolution_listener() -> void:
-# 	var resolution_ctl = get_node_or_null("../ResolutionCtl")
-# 	# if resolution_ctl and resolution_ctl.has_signal("resolution_changed"):
-# 	# 	resolution_ctl.resolution_changed.connect(_on_resolution_changed)
+YAN, 0.3, 2.0, 3.0)
 
-# func _on_resolution_changed(new_resolution: Vector2i) -> void:
-# 	print("Resolution changed to: ", new_resolution)
-# 	display_animated_text("Resolution: " + str(new_resolution.x) + "x" + str(new_resolution.y), Color.CYAN, 0.3, 2.0, 3.0)
-
-
+# TODO: Make resolution changes work properly
+# Labels: code
 func _on_resolution_changed(resolution: Vector2i):
 	get_window().set_size(resolution)
 
