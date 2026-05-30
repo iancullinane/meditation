@@ -1,0 +1,23 @@
+name: Code Request
+description: Describe new assets that should be in game.
+title: "[Code improvement]"
+labels: ["assets"]
+# projects: ["octo-org/1", "octo-org/44"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Code Improvement
+        Please describe the code improvement you would like to see.
+        - [Code improvement description]
+        - [Code improvement description]
+        - ...
+
+        Please describe the code improvement's type:
+        - [Type: e.g. performance, readability, maintainability, etc.]
+
+        What scenes do you expect this code to be used in:
+        - [Scene name]
+        - [Scene name]
+        - ...
