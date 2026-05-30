@@ -1,0 +1,12 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bsqj0lo3c6bnr"]
+
+[ext_resource type="Texture2D" uid="uid://c56lu61y4wqvt" path="res://assets/tiles/TinySwords/Terrain/Water Background color.png" id="1_nomev"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xahxl"]
+texture = ExtResource("1_nomev")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_xahxl")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c23o461yoeaps"]
+[gd_scene format=3 uid="uid://c23o461yoeaps"]
 
 [ext_resource type="Script" uid="uid://bc4hm3b32ihic" path="res://scripts/main.gd" id="1_0xm2m"]
 [ext_resource type="Theme" uid="uid://b2hlmcodi13kc" path="res://resources/ui/base_theme_override.tres" id="1_ig7tw"]
@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://c7vrinhvn1nr0" path="res://scripts/resolution_ctl.gd" id="6_7mycd"]
 [ext_resource type="Script" uid="uid://dsouebodof2kj" path="res://scripts/camera.gd" id="8_5vw27"]
 
-[node name="Main" type="Control"]
+[node name="Main" type="Control" unique_id=1207121759]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_0xm2m")
 
-[node name="BgPanel" type="Panel" parent="."]
+[node name="BgPanel" type="Panel" parent="." unique_id=1917556471]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,7 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ig7tw")
 
-[node name="Meditation" type="MarginContainer" parent="."]
+[node name="Meditation" type="MarginContainer" parent="." unique_id=1568085221]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,47 +43,48 @@ theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 script = ExtResource("3_272bh")
 
-[node name="CozyMap" parent="Meditation" instance=ExtResource("3_h2yge")]
+[node name="CozyMap" parent="Meditation" unique_id=295956601 instance=ExtResource("3_h2yge")]
 unique_name_in_owner = true
+position = Vector2(352, 222)
 
-[node name="FgPanel" type="Panel" parent="Meditation"]
-modulate = Color(1, 1, 1, 0)
+[node name="FgPanel" type="Panel" parent="Meditation" unique_id=422790562]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 13.4
 
-[node name="LineEdit" type="LineEdit" parent="Meditation/FgPanel"]
+[node name="LineEdit" type="LineEdit" parent="Meditation/FgPanel" unique_id=1573567518]
 layout_mode = 0
 offset_left = 20.0
-offset_top = 949.0
+offset_top = 922.0
 offset_right = 1068.0
-offset_bottom = 997.0
+offset_bottom = 999.0
 
-[node name="Button" type="Button" parent="Meditation/FgPanel"]
+[node name="Button" type="Button" parent="Meditation/FgPanel" unique_id=640008673]
 layout_mode = 0
 offset_left = 22.0
-offset_top = 878.0
+offset_top = 857.0
 offset_right = 490.0
-offset_bottom = 927.0
+offset_bottom = 906.0
 theme = ExtResource("5_lquwl")
 text = "Talk to Sheeta"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Meditation/FgPanel"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Meditation/FgPanel" unique_id=1053526763]
 layout_mode = 0
 offset_left = 1086.0
 offset_top = 31.0
 offset_right = 1834.0
 offset_bottom = 982.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Meditation/FgPanel/ScrollContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Meditation/FgPanel/ScrollContainer" unique_id=231259288]
 layout_mode = 2
 
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1749071303]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=167116576]
 
-[node name="Login" type="CenterContainer" parent="CanvasLayer" node_paths=PackedStringArray("requester")]
+[node name="Login" type="CenterContainer" parent="CanvasLayer" unique_id=245925340 node_paths=PackedStringArray("requester")]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -93,12 +95,12 @@ project_id = "project-test-6fb6d3de-59b4-49af-a1a3-255b34f8c2a3"
 secret = "secret-test-KduLCHsh0d9ogRIoBrfkJ_IRZnFYfmG5Wpg="
 requester = NodePath("HTTPRequest")
 
-[node name="LoginPanel" type="Panel" parent="CanvasLayer/Login"]
+[node name="LoginPanel" type="Panel" parent="CanvasLayer/Login" unique_id=1041704464]
 custom_minimum_size = Vector2(800, 600)
 layout_mode = 2
 theme = ExtResource("5_lquwl")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Login/LoginPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Login/LoginPanel" unique_id=807537953]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -110,18 +112,18 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Login/LoginPanel/MarginContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Login/LoginPanel/MarginContainer" unique_id=789721961]
 layout_mode = 2
 
-[node name="UserCtl" type="VBoxContainer" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2"]
+[node name="UserCtl" type="VBoxContainer" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2" unique_id=1069001567]
 layout_mode = 2
 
-[node name="Email" type="HBoxContainer" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl"]
+[node name="Email" type="HBoxContainer" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl" unique_id=509888052]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl/Email"]
+[node name="Label" type="Label" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl/Email" unique_id=365823810]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -129,55 +131,55 @@ text = "Username"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl/Email"]
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl/Email" unique_id=836076370]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 text = "steve@email.com"
 
-[node name="UserControls" type="HBoxContainer" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl"]
+[node name="UserControls" type="HBoxContainer" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl" unique_id=2126086464]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="GetUser" type="Button" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl/UserControls"]
+[node name="GetUser" type="Button" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl/UserControls" unique_id=38044246]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Login"
 
-[node name="CreateUser" type="Button" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl/UserControls"]
+[node name="CreateUser" type="Button" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl/UserControls" unique_id=1527144435]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Create"
 
-[node name="DebugControls" type="HBoxContainer" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl"]
+[node name="DebugControls" type="HBoxContainer" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl" unique_id=624935171]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="SearchUser" type="Button" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl/DebugControls"]
+[node name="SearchUser" type="Button" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl/DebugControls" unique_id=520491445]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Search User
 "
 
-[node name="DeleteUser" type="Button" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl/DebugControls"]
+[node name="DeleteUser" type="Button" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl/DebugControls" unique_id=1819900769]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Delete User
 "
 
-[node name="UserID" type="Label" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl"]
+[node name="UserID" type="Label" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/UserCtl" unique_id=1782051453]
 unique_name_in_owner = true
 layout_mode = 2
 vertical_alignment = 2
 
-[node name="ResolutionCtl" type="VBoxContainer" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2"]
+[node name="ResolutionCtl" type="VBoxContainer" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2" unique_id=1151896019]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("6_7mycd")
 
-[node name="OptionsBtn" type="OptionButton" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/ResolutionCtl"]
+[node name="OptionsBtn" type="OptionButton" parent="CanvasLayer/Login/LoginPanel/MarginContainer/VBoxContainer2/ResolutionCtl" unique_id=761827222]
 layout_mode = 2
 selected = 0
 item_count = 9
@@ -200,9 +202,9 @@ popup/item_7/id = 7
 popup/item_8/text = "800x600"
 popup/item_8/id = 8
 
-[node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer/Login"]
+[node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer/Login" unique_id=1040653108]
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=942661324]
 script = ExtResource("8_5vw27")
 
 [connection signal="text_changed" from="Meditation/FgPanel/LineEdit" to="." method="_on_line_edit_text_changed"]

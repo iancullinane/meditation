@@ -8,12 +8,16 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Menu Based Game WIth HTTP"
 config/tags=PackedStringArray("interface")
 run/main_scene="uid://c23o461yoeaps"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
@@ -34,6 +38,10 @@ folder_colors={
 "res://scenes/": "yellow",
 "res://scripts/": "green"
 }
+
+[gui]
+
+theme/custom="uid://bn3aah6mtx2so"
 
 [rendering]
 
