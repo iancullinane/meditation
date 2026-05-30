@@ -1,0 +1,24 @@
+name: Asset Request
+description: Describe new assets that should be in game.
+title: "[New asset description]"
+labels: ["assets"]
+# projects: ["octo-org/1", "octo-org/44"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Asset Description
+        Please describe the new asset you would like to see in the game.
+        - Asset type: [e.g. character, background, UI, etc.]
+        - Description: [A detailed description of the asset's purpose and appearance]
+        - Usage: [Where in the game will this asset be used?]
+        - Additional context: [Any other relevant information about the asset]
+
+        Please descrive what scnes you expec to use this in:
+        - [Scene name]
+        - [Scene name]
+        - ...
+
+        Please describe the asset's type:
+        - [Type: e.g. character, background, UI, etc.]
