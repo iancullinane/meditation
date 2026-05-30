@@ -22,9 +22,8 @@ func _ready() -> void:
 	http_request.request_completed.connect(_on_request_completed)
 	resolution_ctl.resolution_changed.connect(_on_resolution_changed)
 
-	# Center the camera on the marker
+	# # Center the camera on the marker
 	center_camera_on_marker()
-YAN, 0.3, 2.0, 3.0)
 
 # TODO: Make resolution changes work properly
 # Labels: code

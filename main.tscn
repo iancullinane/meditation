@@ -83,6 +83,7 @@ layout_mode = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=167116576]
 
 [node name="Login" type="CenterContainer" parent="CanvasLayer" unique_id=245925340 node_paths=PackedStringArray("requester")]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
